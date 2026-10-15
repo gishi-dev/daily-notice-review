@@ -1,0 +1,16 @@
+{
+  "name": "daily-notice-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "架空のお知らせを前日までの話題と比べ、人の確認で翌日の一覧を更新する公開デモ",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check app.js"
+  },
+  "dependencies": {}
+}

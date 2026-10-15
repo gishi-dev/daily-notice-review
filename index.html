@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>毎日のお知らせ確認室</title><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head>
+<body><header><div class="eyebrow">公開デモ / サンプル工業</div><h1>毎日のお知らせ確認室</h1><p>原文を読み、昨日までの話題と比べて、明日の一覧へ。</p></header>
+<main><aside class="banner">すべて架空のデータです。保存済みのAI候補を再生しています。その場でAIを呼ばず、お知らせを変えても再処理しません。<br>「通知候補」は人が確認する区分です。送信の承認ではなく、送信・通知の機能はありません。</aside>
+<div class="toolbar"><label>表示日 <select id="day"></select></label><label>判断者の役割 <input id="actor" value="制度確認担当" maxlength="40"></label><button id="export">判断をJSONで書き出す</button><button id="reset">最初からやり直す</button></div>
+<p id="message" role="status" aria-live="polite"></p><details id="exportResult" hidden><summary>書き出したJSON（保存できない場合はここからコピー）</summary><textarea id="exportText" readonly aria-label="書き出したJSON"></textarea></details><section id="overview"></section><section><h2>前日までの通知済みの話題</h2><div id="ledger"></div></section>
+<section><h2>原文と候補を確認</h2><p>続報・再掲を採用する前に「比較元を開く」で内容を確認してください。すべての判断に理由が必要です。</p><div id="notices"></div><button id="add">お知らせを追加</button></section>
+<section><h2>任意の生成AIで検討する</h2><p>コピーや取り込みは手動です。外部へ自動送信しません。編集後は現在の入力で候補を作り直して取り込んでください。</p><button id="prompt">当日分・一覧・指示を用意</button><textarea id="promptText" readonly aria-label="コピー用の指示と入力"></textarea><button id="copy">指示と入力をコピー</button><label>候補JSONを貼り付け<textarea id="importText" placeholder='{"dayStatus":"項目あり","sources":{},"items":[]}'></textarea></label><button id="import">候補を検査して取り込む</button></section>
+<section><h2>確認待ちの一覧（現在）</h2><div id="pending"></div></section><section><h2>今日の判断と通知候補（送信はしない）</h2><div id="decisions"></div><button id="next" class="primary">この日の判断を確定して翌日へ</button></section><section><h2>判断の履歴</h2><div id="history"></div></section></main><footer>状態はこの画面を開いている間だけ保持します。再読み込み前に書き出してください。</footer></body></html>
